@@ -158,6 +158,8 @@ Dessa maneira, o setor responsável pelo gerenciamento receberá as seguintes in
 - <strong>Inicialização de irrigação</strong>: serão enviadas informações relacionadas ao início da irrigação;
 - <strong>Finalização de irrigação</strong>: serão enviadas informações relacionadas ao término da irrigação;
 
+O componente responsável pelo envio de notificações utilizará o serviço da AWS.
+
 ## 📁 Estrutura de pastas
 
 Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
