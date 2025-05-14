@@ -158,7 +158,7 @@ Dessa maneira, o setor responsável pelo gerenciamento receberá as seguintes in
 - <strong>Inicialização de irrigação</strong>: serão enviadas informações relacionadas ao início da irrigação;
 - <strong>Finalização de irrigação</strong>: serão enviadas informações relacionadas ao término da irrigação;
 
-O componente responsável pelo envio de notificações utilizará o serviço da AWS.
+O componente responsável pelo envio de notificações utilizará o serviço da AWS. Para fins de validação, os métodos responsáveis pelas ações acima podem ser visualizados clicando [aqui](https://github.com/RM559712/fase7_cap1/tree/main/src/aws/lambda).
 
 ## 📁 Estrutura de pastas
 
