@@ -58,6 +58,13 @@ class Helper:
 
 
     @staticmethod
+    def get_current_datetime():
+
+        object_datetime = datetime.now()
+        return object_datetime
+
+
+    @staticmethod
     def get_datetime_object_by_date_oracle(str_datetime: str = None) -> datetime:
 
         return datetime.strptime(str_datetime, '%Y-%m-%d %H:%M:%S')
@@ -73,21 +80,21 @@ class Helper:
     @staticmethod
     def get_current_datetime_to_pt_br(bool_microsecond: bool = False) -> str:
 
-        object_datetime = datetime.now()
+        object_datetime = Helper.get_current_datetime()
         return f'{object_datetime.strftime("%d/%m/%Y %H:%M:%S")},{object_datetime.microsecond}' if bool_microsecond == True else f'{object_datetime.strftime("%d/%m/%Y %H:%M:%S")}'
 
 
     @staticmethod
     def get_current_datetime_to_en_us(bool_microsecond: bool = False) -> str:
 
-        object_datetime = datetime.now()
+        object_datetime = Helper.get_current_datetime()
         return f'{object_datetime.strftime("%Y-%m-%d %H:%M:%S")},{object_datetime.microsecond}' if bool_microsecond == True else f'{object_datetime.strftime("%Y-%m-%d %H:%M:%S")}'
 
 
     @staticmethod
     def get_current_datetime_to_oracle(bool_microsecond: bool = False) -> str:
 
-        object_datetime = datetime.now()
+        object_datetime = Helper.get_current_datetime()
         return f'{object_datetime.strftime("%d/%m/%Y %H:%M:%S")},{object_datetime.microsecond}' if bool_microsecond == True else f'{object_datetime.strftime("%d/%m/%Y %H:%M:%S")}'
 
 

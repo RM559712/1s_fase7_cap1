@@ -529,6 +529,23 @@ def action_insert():
 
     print('Registro cadastrado com sucesso.')
 
+    dict_data_sensor = get_data_sensor_by_id(int_msm_sns_id)
+    dict_data_plantation = get_data_plantation_by_id(int_msm_pln_id)
+
+    dict_params_email = {
+
+        'msm_id': dict_data['MSM_ID'],
+        'sns_name': dict_data_sensor['SNS_NAME'],
+        'pln_name': dict_data_plantation['PLN_NAME'],
+        'msm_value': dict_data['MSM_VALUE'],
+        'msm_insert_date': Helper.convert_date_to_pt_br(dict_data['MSM_INSERT_DATE']),
+
+    }
+
+    # <PENDENTE>
+    pprint.pprint(dict_params_email)
+    exit()
+
     object_f7c1_irrigation = F7C1Irrigation()
 
     if object_f7c1_irrigation.validate_exists_active_execution_by_plantation(int_msm_pln_id) == False:
@@ -548,9 +565,6 @@ def action_insert():
         input(f'A partir das medições cadastradas, será verificado se a irrigação automática deverá ser iniciada. Pressione <enter> para continuar...')
 
         print('')
-
-        dict_data_plantation = get_data_plantation_by_id(int_msm_pln_id)
-        dict_data_sensor = get_data_sensor_by_id(int_msm_sns_id)
 
         dict_validate_irrigation = {'dict_filters_plantation': {}, 'dict_measurement': {}, 'dict_filters_rain': {}}
 

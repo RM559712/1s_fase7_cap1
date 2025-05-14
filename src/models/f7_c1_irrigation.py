@@ -1,5 +1,6 @@
 from models.database.database import Database
 from custom.helper import Helper
+import pprint
 
 class F7C1Irrigation(Database):
 
@@ -139,6 +140,23 @@ class F7C1Irrigation(Database):
 
             self.insert(dict_data)
 
+            dict_active_irrigation = self.get_active_execution_by_plantation(dict_params['pln_id'])
+            if dict_active_irrigation['status'] == False:
+                raise Exception(dict_active_irrigation['message'])
+
+            dict_params_email = {
+
+                'pln_id': dict_params['pln_id'],
+                'pln_name': dict_active_irrigation['dict_data']['PLN_NAME'],
+                'irg_ini_date': Helper.convert_date_to_pt_br(dict_active_irrigation['dict_data']['IRG_INI_DATE']),
+                'irg_origin': self.get_label_origin(dict_active_irrigation['dict_data']['IRG_ORIGIN'])
+
+            }
+
+            # <PENDENTE>
+            pprint.pprint(dict_params_email)
+            exit()
+
         except Exception as error:
 
             dict_return = {'status': False, 'message': error}
@@ -169,6 +187,18 @@ class F7C1Irrigation(Database):
             dict_active_irrigation['IRG_STATUS_EXECUTION'] = self.STATUS_EXECUTION_FINISHED
 
             self.update(dict_active_irrigation)
+
+            dict_params_email = {
+
+                'pln_id': dict_params['pln_id'],
+                'pln_name': dict_active_irrigation['dict_data']['PLN_NAME'],
+                'irg_end_date': Helper.convert_date_to_pt_br(Helper.get_current_datetime())
+
+            }
+
+            # <PENDENTE>
+            pprint.pprint(dict_params_email)
+            exit()
 
         except Exception as error:
 
