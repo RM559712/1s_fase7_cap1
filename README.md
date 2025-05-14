@@ -154,9 +154,9 @@ Nesta fase, foram adicionadas melhorias que visam principalmente auxiliar o gere
 
 Dessa maneira, o setor responsável pelo gerenciamento receberá as seguintes informações:
 
-- <strong>Cadastro de medição</strong>: serão enviadas informações relacionadas à medição;
-- <strong>Inicialização de irrigação</strong>: serão enviadas informações relacionadas ao início da irrigação;
-- <strong>Finalização de irrigação</strong>: serão enviadas informações relacionadas ao término da irrigação;
+- <strong>Cadastro de medição</strong>: serão enviadas informações relacionadas à medição a partir da ação <i>f7c1_insert-measurement</i>;
+- <strong>Inicialização de irrigação</strong>: serão enviadas informações relacionadas ao início da irrigação a partir da ação <i>f7c1_begin-irrigation</i>;
+- <strong>Finalização de irrigação</strong>: serão enviadas informações relacionadas ao término da irrigação a partir da ação <i>f7c1_end-irrigation</i>;
 
 O componente responsável pelo envio de notificações utilizará o serviço da AWS. Para fins de validação, os métodos responsáveis pelas ações acima podem ser visualizados clicando [aqui](https://github.com/RM559712/fase7_cap1/tree/main/src/aws/lambda).
 
