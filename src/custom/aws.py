@@ -227,9 +227,10 @@ class Aws:
     Arguments:
     - str_plantation_name: Nome da plantação ( str )
     - str_end_date: Data de finalização ( str )
+    - float_water: Quantidade de água utilizada ( float )
    
     """
-    def send_message_by_end_irrigation(self, str_plantation_name: str = None, str_end_date: str = None)-> dict:
+    def send_message_by_end_irrigation(self, str_plantation_name: str = None, str_end_date: str = None, float_water: float = 0.00)-> dict:
 
         dict_return = {'status': True, 'dict_data': {}}
 
@@ -243,8 +244,11 @@ class Aws:
             if type(str_end_date) == type(None) or type(str_end_date) != str or str_end_date.strip() == '':
                 self.exception('Não foi possível concluir o processo pois a data de finalização não foi definida.')
 
+            if type(float_water) == type(None) or type(float_water) != float:
+                self.exception('Não foi possível concluir o processo pois a quantidade de água utilizada não foi definida.')
+
             dict_params_request['str_subject'] = f'Finalização de irrigação'
-            dict_params_request['str_message'] = f'A irrigação da plantação "{str_plantation_name}" foi finalizada com sucesso em {str_end_date}.'
+            dict_params_request['str_message'] = f'A irrigação da plantação "{str_plantation_name}" foi finalizada com sucesso em {str_end_date}, gerando um gasto total de {float_water} ml de água.'
 
             str_url = f'{self.__get_url_by_end_irrigation()}'
             dict_return['dict_data'] = self.__execute_request(str_url, 'POST', dict_params_request)
