@@ -5,5 +5,20 @@
     },
     "correios": {
         "url": "https://viacep.com.br/ws/{int_cep}/json/"
+    },
+    "aws": {
+        "services": {
+            "sns": {
+                "insert-measurement": {
+                    "url": "https://iopgkk70ob.execute-api.us-east-1.amazonaws.com/f7c1_insert-measurement"
+                },
+                "begin-irrigation": {
+                    "url": "https://hn68858ppg.execute-api.us-east-1.amazonaws.com/f7c1_begin-irrigation"
+                },
+                "end-irrigation": {
+                    "url": "https://8of7xok0fd.execute-api.us-east-1.amazonaws.com/f7c1_end-irrigation"
+                }
+            }
+        }
     }
 }

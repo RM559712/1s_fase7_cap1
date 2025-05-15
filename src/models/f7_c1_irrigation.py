@@ -1,4 +1,5 @@
 from models.database.database import Database
+from custom.aws import Aws
 from custom.helper import Helper
 import pprint
 
@@ -144,18 +145,17 @@ class F7C1Irrigation(Database):
             if dict_active_irrigation['status'] == False:
                 raise Exception(dict_active_irrigation['message'])
 
-            dict_params_email = {
+            object_aws = Aws()
+            dict_send_message_by_begin_irrigation = object_aws.send_message_by_begin_irrigation(
 
-                'pln_id': dict_params['pln_id'],
-                'pln_name': dict_active_irrigation['dict_data']['PLN_NAME'],
-                'irg_ini_date': Helper.convert_date_to_pt_br(dict_active_irrigation['dict_data']['IRG_INI_DATE']),
-                'irg_origin': self.get_label_origin(dict_active_irrigation['dict_data']['IRG_ORIGIN'])
+                str_plantation_name = dict_active_irrigation['dict_data']['PLN_NAME'],
+                str_ini_date = Helper.convert_date_to_pt_br(dict_active_irrigation['dict_data']['IRG_INI_DATE']),
+                str_origin = self.get_label_origin(dict_active_irrigation['dict_data']['IRG_ORIGIN'])
 
-            }
+            )
 
-            # <PENDENTE>
-            pprint.pprint(dict_params_email)
-            exit()
+            if dict_send_message_by_begin_irrigation['status'] == False:
+                raise Exception(dict_send_message_by_begin_irrigation['message'])
 
         except Exception as error:
 
@@ -188,17 +188,16 @@ class F7C1Irrigation(Database):
 
             self.update(dict_active_irrigation)
 
-            dict_params_email = {
+            object_aws = Aws()
+            dict_send_message_by_end_irrigation = object_aws.send_message_by_end_irrigation(
 
-                'pln_id': dict_params['pln_id'],
-                'pln_name': dict_active_irrigation['dict_data']['PLN_NAME'],
-                'irg_end_date': Helper.convert_date_to_pt_br(Helper.get_current_datetime())
+                str_plantation_name = dict_active_irrigation['dict_data']['PLN_NAME'],
+                str_end_date = Helper.convert_date_to_pt_br(Helper.get_current_datetime())
 
-            }
+            )
 
-            # <PENDENTE>
-            pprint.pprint(dict_params_email)
-            exit()
+            if dict_send_message_by_end_irrigation['status'] == False:
+                raise Exception(dict_send_message_by_end_irrigation['message'])
 
         except Exception as error:
 

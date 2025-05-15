@@ -13,33 +13,19 @@ def lambda_handler(dict_event, context):
 
         dict_params = json.loads(dict_event['body'])
 
-        msm_id = dict_params.get('msm_id')
-        if not msm_id:
-            raise Exception(f'Não foi possível concluir o processo pois não foi definida a referência da medição.')
+        str_subject = dict_params.get('str_subject')
+        if not str_subject:
+            raise Exception(f'Não foi possível concluir o processo pois não foi definido o assunto para envio da notificação de cadastro de medição.')
 
-        sns_name = dict_params.get('sns_name')
-        if not sns_name:
-            raise Exception(f'Não foi possível concluir o processo pois não foi definido o nome do sensor.')
-
-        pln_name = dict_params.get('pln_name')
-        if not pln_name:
-            raise Exception(f'Não foi possível concluir o processo pois não foi definido o nome da plantação.')
-
-        msm_value = dict_params.get('msm_value')
-        if not msm_value:
-            raise Exception(f'Não foi possível concluir o processo pois não foi definido o valor da medição.')
-
-        msm_insert_date = dict_params.get('msm_insert_date')
-        if not msm_insert_date:
-            raise Exception(f'Não foi possível concluir o processo pois não foi definida a data e hora da medição.')
-
-        str_message = f'Uma medição foi cadastrada a partir do sensor "{sns_name}" na plantação "{pln_name}" com o valor de {msm_value} em {msm_insert_date}.'
+        str_message = dict_params.get('str_message')
+        if not str_message:
+            raise Exception(f'Não foi possível concluir o processo pois não foi definida a mensagem para envio da notificação de cadastro de medição.')
 
         object_sns_client = boto3.client('sns', region_name = 'us-east-1')
         object_response = object_sns_client.publish(
             TopicArn = os.getenv('SNS_TOPIC_ARN'),
-            Message = str_message,
-            Subject = 'Cadastro de medição'
+            Subject = str_subject,
+            Message = str_message
         )
 
         dict_return['dict_data'] = {

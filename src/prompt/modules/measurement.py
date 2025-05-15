@@ -9,6 +9,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '.
 import prompt.main as Main
 import prompt.modules.sensor as ModuleSensor
 import prompt.modules.plantation as ModulePlantation
+from custom.aws import Aws
 from custom.helper import Helper
 from custom.irrigation import Irrigation
 from models.f7_c1_measurement import F7C1Measurement
@@ -532,19 +533,18 @@ def action_insert():
     dict_data_sensor = get_data_sensor_by_id(int_msm_sns_id)
     dict_data_plantation = get_data_plantation_by_id(int_msm_pln_id)
 
-    dict_params_email = {
+    object_aws = Aws()
+    dict_send_message_by_insert_measurement = object_aws.send_message_by_insert_measurement(
 
-        'msm_id': dict_data['MSM_ID'],
-        'sns_name': dict_data_sensor['SNS_NAME'],
-        'pln_name': dict_data_plantation['PLN_NAME'],
-        'msm_value': dict_data['MSM_VALUE'],
-        'msm_insert_date': Helper.convert_date_to_pt_br(dict_data['MSM_INSERT_DATE']),
+        str_sensor_name = dict_data_sensor['SNS_NAME'], 
+        str_plantation_name = dict_data_plantation['PLN_NAME'], 
+        float_measurement_value = dict_data['MSM_VALUE'], 
+        str_insert_date = Helper.convert_date_to_pt_br(dict_data['MSM_INSERT_DATE'])
 
-    }
+    )
 
-    # <PENDENTE>
-    pprint.pprint(dict_params_email)
-    exit()
+    if dict_send_message_by_insert_measurement['status'] == False:
+        raise Exception(dict_send_message_by_insert_measurement['message'])
 
     object_f7c1_irrigation = F7C1Irrigation()
 

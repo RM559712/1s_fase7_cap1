@@ -80,3 +80,13 @@ class Config:
         return dict_return
 
 
+    def get_params_by_aws(self) -> dict:
+
+        dict_params = self.get_params()
+        if dict_params['status'] == False:
+            self.exception(dict_params['message'])
+
+        dict_return = dict_params['dict_data']['aws'] if 'aws' in dict_params['dict_data'] else {}
+        return dict_return
+
+

@@ -158,6 +158,8 @@ Dessa maneira, o setor responsável pelo gerenciamento receberá as seguintes in
 - <strong>Inicialização de irrigação</strong>: serão enviadas informações relacionadas ao início da irrigação a partir da ação <i>f7c1_begin-irrigation</i>;
 - <strong>Finalização de irrigação</strong>: serão enviadas informações relacionadas ao término da irrigação a partir da ação <i>f7c1_end-irrigation</i>;
 
+Os serviços de envio de notificações mencionados acima foram desenvolvidos com estruturas semelhantes e de forma individual visando possíveis melhorias futuras, como a possibilidade de alteração do tipo de mensagem enviada para diferentes contextos. Um exemplo seria o envio de SMS apenas para um dos eventos ou ainda o envio de e-mail apenas para eventos relacionados à irrigação. Dessa forma, o sistema fica responsável pela definição das regras de negócio para definição do conteúdo das mensagens.
+
 O componente responsável pelo envio de notificações utilizará o serviço da AWS. Para fins de validação, os métodos responsáveis pelas ações acima podem ser visualizados clicando [aqui](https://github.com/RM559712/fase7_cap1/tree/main/src/aws/lambda).
 
 ## 📁 Estrutura de pastas
