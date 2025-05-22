@@ -31,6 +31,8 @@ Grupo de número <b>50</b> formado pelos integrantes mencionados abaixo.
 
 Cada versão do projeto está distribuída em um repositório devido ao avanço de suas funcionalidades. Portanto, em cada item abaixo, serão feitas referências para esses repositórios para uma melhor análise.
 
+É possível assistir o vídeo contendo um resumo das versões mencionadas abaixo através deste [link](<PENDENTE>).
+
 > ### Versão 1
 
 A primeira versão do projeto está disponível no repositório [fase 1](https://github.com/RM559712/fase1).
