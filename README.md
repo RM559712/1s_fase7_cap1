@@ -161,6 +161,18 @@ Os serviços de envio de notificações mencionados acima foram desenvolvidos co
 
 O componente responsável pelo envio de notificações utilizará o serviço da AWS. Para fins de validação, os métodos responsáveis pelas ações acima podem ser visualizados clicando [aqui](https://github.com/RM559712/fase7_cap1/tree/main/src/aws/lambda).
 
+Exemplo de notificação recebida a partir do serviço de <strong>cadastro de medição</strong>.
+
+![Cadastro de Medição](https://github.com/RM559712/fase5_cap1/blob/main/assets/images/measurement.png)
+
+Exemplo de notificação recebida a partir do serviço de <strong>inicialização de irrigação</strong>.
+
+![Inicialização de Irrigação](https://github.com/RM559712/fase5_cap1/blob/main/assets/images/begin-irrigation.png)
+
+Exemplo de notificação recebida a partir do serviço de <strong>finalização de irrigação</strong>.
+
+![Finalização de Irrigação](https://github.com/RM559712/fase5_cap1/blob/main/assets/images/end-irrigation.png)
+
 ## 📁 Estrutura de pastas
 
 Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
