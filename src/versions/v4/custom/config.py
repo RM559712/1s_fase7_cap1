@@ -21,8 +21,8 @@ class Config:
 
     def get_system_path_dir(self) -> str:
 
-        # Direcionamento para "custom > src > ..."
-        return os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+        # Direcionamento para "custom > v2 > versions > src > ..."
+        return os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))))
 
 
     def get_db(self) -> dict:
@@ -78,16 +78,6 @@ class Config:
             self.exception(dict_params['message'])
 
         dict_return = dict_params['dict_data']['correios'] if 'correios' in dict_params['dict_data'] else {}
-        return dict_return
-
-
-    def get_params_by_aws(self) -> dict:
-
-        dict_params = self.get_params()
-        if dict_params['status'] == False:
-            self.exception(dict_params['message'])
-
-        dict_return = dict_params['dict_data']['aws'] if 'aws' in dict_params['dict_data'] else {}
         return dict_return
 
 

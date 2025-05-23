@@ -211,6 +211,31 @@ Alguns módulos do sistema podem ser executados em formato <i>web</i> utilizando
 
 Para essa versão não são solicitados parâmetros para acesso como por exemplo <i>username</i>, <i>password</i>, <i>token access</i>, etc.
 
+### Versões anteriores
+
+É possível executar as versões anteriores do projeto de forma isolada, já que cada uma delas possui uma estrutura diferente de banco de dados.
+
+#### Versão 1
+
+Essa versão pode ser executada através do diretório "./src/versions/v1".
+
+#### Versão 2
+
+Essa versão pode ser executada através do diretório "./src/versions/v2/prompt".
+
+#### Versão 3
+
+Essa versão pode ser executada através do diretório "./src/versions/v3/prompt".
+
+#### Versão 4
+
+Essa versão pode ser executada através do diretório "./src/versions/v4/prompt".
+
+#### Execução
+
+1. Utilizando algum editor de código compatível com a linguagem de programação Python (<i>VsCode, PyCharm, etc.</i>), acesse o diretório da versão desejada conforme os itens acima.
+2. Neste diretório, basta abrir o arquivo "main.py" e executá-lo.
+
 ## 🗃 Histórico de lançamentos
 
 * 1.0.0 - 23/05/2025
