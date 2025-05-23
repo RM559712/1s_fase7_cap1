@@ -31,6 +31,8 @@ Grupo de número <b>50</b> formado pelos integrantes mencionados abaixo.
 
 Cada versão do projeto está distribuída em um repositório devido ao avanço de suas funcionalidades. Portanto, em cada item abaixo, serão feitas referências para esses repositórios para uma melhor análise.
 
+Existe uma documentação específica com orientações para execução das versões anteriores de forma isolada. Para acessá-la, basta clicar [aqui](https://github.com/RM559712/fase7_cap1?tab=readme-ov-file#vers%C3%B5es-anteriores).
+
 É possível assistir o vídeo contendo um resumo das versões mencionadas abaixo através deste [link](https://youtu.be/UCGPMQDeXmE).
 
 > ### Versão 1
