@@ -223,7 +223,7 @@ Para essa versão não são solicitados parâmetros para acesso como por exemplo
 
 ### Versões anteriores
 
-É possível executar as versões anteriores do projeto de forma isolada, já que cada uma delas possui uma estrutura diferente no banco de dados.
+É possível executar as versões anteriores do projeto de forma isolada, já que cada uma delas possui uma estrutura específica no banco de dados.
 
 #### Versão 1
 
