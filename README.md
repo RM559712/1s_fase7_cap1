@@ -56,7 +56,7 @@ No menu principal, é possível ainda visualizar um histórico de cálculos exec
 
 Também são disponibilizadas outras funcionalidades para auxílio no plantio, como a visualização de um relatório dos cálculos executados e também a visualização de um relatório meteorológico para áreas específicas, ambas utilizando a linguagem R.
 
-As orientações para execução dessa versão estão disponíveis [aqui](https://github.com/RM559712/fase7_cap1?tab=readme-ov-file#vers%C3%A3o-1-1).
+As orientações para execução dessa versão de forma isolada estão disponíveis [aqui](https://github.com/RM559712/fase7_cap1?tab=readme-ov-file#vers%C3%A3o-1-1).
 
 > ### Versão 2
 
@@ -84,7 +84,7 @@ Os parâmetros que podem ser definidos para execução das simulações são:
 
 Ao final do processo, é gerado um relatório detalhando as condições meteorológicas para cada um dos parâmetros utilizados no cadastro da cultura, incluindo uma conclusão ao final informando se as condições para plantio estão favoráveis ou desfavoráveis, considerando os próximos 5 dias a partir da data e hora de execução e com intervalos de 6 horas.
 
-As orientações para execução dessa versão estão disponíveis [aqui](https://github.com/RM559712/fase7_cap1?tab=readme-ov-file#vers%C3%A3o-2-1).
+As orientações para execução dessa versão de forma isolada estão disponíveis [aqui](https://github.com/RM559712/fase7_cap1?tab=readme-ov-file#vers%C3%A3o-2-1).
 
 > ### Versão 3
 
@@ -118,7 +118,7 @@ Com as culturas devidamente cadastradas e associadas às suas plantações, é p
 
 Ao final do processo, é possível visualizar um histórico das irrigações executadas nas plantações, onde são disponibilizadas informações como a origem do processo (<i>manual ou automática</i>), quantidade de água utilizada, status de execução (<i>em execução ou finalizado</i>) e data e hora de início e término dependendo do status.
 
-As orientações para execução dessa versão estão disponíveis [aqui](https://github.com/RM559712/fase7_cap1?tab=readme-ov-file#vers%C3%A3o-3-1).
+As orientações para execução dessa versão de forma isolada estão disponíveis [aqui](https://github.com/RM559712/fase7_cap1?tab=readme-ov-file#vers%C3%A3o-3-1).
 
 > ### Versão 4
 
@@ -126,7 +126,7 @@ A quarta versão do projeto está disponível no repositório [fase 4](https://g
 
 Nesta fase, foram adicionadas melhorias técnicas no sistema visando diminuir o tempo de processamento tanto no armazenamento das medições, que podem ser efetuadas por API ou manualmente, quanto na listagem do histórico das irrigações executadas nas plantações, e também a opção para geração de gráfico de dispersão a partir do histórico de execução das irrigações, na qual pode ser visualizado tanto em formato padrão a partir do <i>prompt</i> como também em formato <i>web</i> a partir da biblioteca Streamlit.
 
-As orientações para execução dessa versão estão disponíveis [aqui](https://github.com/RM559712/fase7_cap1?tab=readme-ov-file#vers%C3%A3o-4-1).
+As orientações para execução dessa versão de forma isolada estão disponíveis [aqui](https://github.com/RM559712/fase7_cap1?tab=readme-ov-file#vers%C3%A3o-4-1).
 
 > ### Versão 5
 
